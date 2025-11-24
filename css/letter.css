@@ -4,8 +4,8 @@
 
 h1,
 p {
-	font-family: "Quicksand";
-  font-optical-sizing: auto;
+	font-family: "Quicksand", sans-serif;
+	font-optical-sizing: auto;
 }
 
 h1 {
@@ -23,6 +23,7 @@ body {
 	top: 36%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	text-align: center;
 }
 
 .container {
@@ -46,7 +47,6 @@ body {
 .heart > img {
 	width: 50px;
 	height: auto;
-
 	animation-name: beat;
 	animation-duration: 2s;
 	animation-timing-function: ease-in-out;
@@ -58,8 +58,7 @@ body {
 	padding: 25px;
 	background-color: #eee;
 	font-family: "Quicksand", serif;
-  font-optical-sizing: auto;
-	font-size: clamp(16px, 10vw, 17px);
+	font-size: clamp(16px, 4vw, 17px);
 	text-align: justify;
 	line-height: 1.5em;
 	width: 80%;
@@ -70,7 +69,6 @@ body {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 0;
-
 	animation-name: openmsg;
 	animation-duration: 2s;
 	animation-timing-function: linear;
@@ -78,10 +76,10 @@ body {
 	animation-fill-mode: forwards;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 	border-radius: 5px;
-	overflow: scroll;
+	overflow-y: auto;
 	scrollbar-width: none;
 }
- 
+
 .message .sincere{
 	text-align: left;
 	font-family: "Cinzel, serif";
@@ -94,27 +92,13 @@ body {
 }
 
 @keyframes beat {
-	0% {
-		width: 50px;
-	}
-	25% {
-		width: 58px;
-	}
-	30% {
-		width: 50px;
-	}
-	50% {
-		width: 45px;
-	}
-	60% {
-		width: 50px;
-	}
-	75% {
-		width: 58px;
-	}
-	100% {
-		width: 50px;
-	}
+	0% { width: 50px; }
+	25% { width: 58px; }
+	30% { width: 50px; }
+	50% { width: 45px; }
+	60% { width: 50px; }
+	75% { width: 58px; }
+	100% { width: 50px; }
 }
 
 @keyframes openmsg {
@@ -129,9 +113,7 @@ body {
 }
 
 @keyframes heartMove {
-	0% {
-		top: 50%
-	}
+	0% { top: 50% }
 	100% {
 		top: 85%;
 		transform: translate(-50%, 0);
@@ -148,18 +130,9 @@ body {
 	animation-play-state: running;
 }
 
-.no-anim {
-	animation: none;
-}
-
-.closed {
-	height: 0px;
-	padding: 0px 20px;
-}
-
-.bottom {
-	bottom: 5px;
-}
+.no-anim { animation: none; }
+.closed { height: 0px; padding: 0px 20px; }
+.bottom { bottom: 5px; }
 
 .openHer {
 	animation-name: heartMove;
@@ -189,4 +162,62 @@ body {
 .openedHer {
 	top: 85%;
 	transform: translate(-50%, 0);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media screen and (max-width: 768px) {
+	.instruction {
+		font-size: 1.3rem;
+		top: 30%;
+	}
+
+	.heart > img {
+		width: 40px;
+	}
+
+	.message {
+		width: 90%;
+		height: 80%;
+		font-size: clamp(14px, 4vw, 16px);
+		padding: 15px;
+	}
+
+	.message h1 {
+		font-size: 28px;
+	}
+
+	.message .sincere {
+		font-size: 12px;
+	}
+
+	.openHer, .closeHer, .openedHer {
+		top: 80%;
+	}
+}
+
+/* Extra small screens (phones) */
+@media screen and (max-width: 480px) {
+	.instruction {
+		font-size: 1rem;
+		top: 28%;
+	}
+
+	.heart > img {
+		width: 35px;
+	}
+
+	.message {
+		width: 95%;
+		height: 85%;
+		font-size: 14px;
+		padding: 12px;
+	}
+
+	.message h1 {
+		font-size: 24px;
+	}
+
+	.message .sincere {
+		font-size: 11px;
+	}
 }
