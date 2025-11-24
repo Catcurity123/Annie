@@ -1,0 +1,125 @@
+#typeDiv {
+	position: absolute;
+	top: 45%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100%;
+	height: 10%;
+	text-align: center;
+}
+
+#txt1 {
+	font-size: 16px;
+	text-align: center;
+	color: white;
+}
+#txt2 {
+	font-size: 16px;
+	text-align: center;
+	color: white;
+}
+
+#content{
+	position: absolute;
+	top: 1%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100%;
+	height: 20%;
+}
+
+#together{
+	font-size: 25px;
+	text-align: center;
+	color: white;
+}
+
+#timer{
+	text-align: center;
+	color: white;
+}
+
+#d{
+	font-size: 19px;
+}
+
+#h{
+	font-size: 19px;
+}
+
+#m{
+	font-size: 19px;
+}
+
+#s{
+	font-size: 19px;
+}
+
+/* Fullscreen overlay (hidden initially) */
+#secretOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;  
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Secret box content */
+#secretBox {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 260px;
+}
+
+#secretBox input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#secretBox button {
+    margin: 5px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+#secretError {
+    color: red;
+    height: 20px;
+}
+
+#heartBtn {
+    display: block;          /* full-width, centered */
+    margin: 20px auto 0;     /* top margin = spacing from txt1/txt2 */
+    font-size: 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+#heartBtn:hover {
+    transform: scale(1.2);
+}
+
+
+
+/* Make canvas the background */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
